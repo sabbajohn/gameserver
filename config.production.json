@@ -1,0 +1,17 @@
+{
+    "_": "On a production install, put this at /etc/webingo.json, or the path specified at webingo.server.config.SYSTEM_CONFIG_PATH",
+    "debug": true,
+    "http_port": 443,
+    "cert": "/etc/letsencrypt/live/game.amazoniagaming.com/fullchain.pem",
+    "certkey": "/etc/letsencrypt/live/game.amazoniagaming.com/privkey.pem",
+
+    "fb_app_id": "354159478852902",
+    "fb_app_secret": "884f91f81020f97e5f43d2878d57e14e",
+    "fb_app_token": "354159478852902|EpAA1ute8AxXruYu-G4kHJmE0L8",
+
+    "rgs_base": "https://rgsapi.amazoniabingo.com/rgs-api/",
+    "api_v1_keys": [
+        "DEDwgGMTlhcrWSM4OkueJWR+4Yklo4hemL0trs"
+    ]
+}
+

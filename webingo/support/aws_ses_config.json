@@ -1,0 +1,8 @@
+{
+    "sender":"info@amazoniabingo.com",
+    "sendername":"Amazonia Bingo",
+    "username_smtp":"AKIAZX4LLRTNL7NUUG7E",
+    "password_smtp":"BJzrzMu0NHGS/0xFfvoAF+wv22q2J8+WSZEtlOq6Ju38",
+    "host": "email-smtp.us-east-1.amazonaws.com",
+    "port": 587
+}

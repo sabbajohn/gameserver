@@ -1,0 +1,21 @@
+{
+    "CRE":
+    {
+        "_": "These values are per card, if betting on e.g. 4 cards consider 4x the amount",
+        "__": "Used only by tester.py",
+        "min_bet": 50,
+        "max_bet": 25000,
+        "allowed_bets":
+        [
+            { "amount": 50,     "min_lvl": 0,  "jp_fraction": 0.002 },
+            { "amount": 100,    "min_lvl": 0,  "jp_fraction": 0.004 },
+            { "amount": 150,    "min_lvl": 0,  "jp_fraction": 0.006 },
+            { "amount": 250,    "min_lvl": 3,  "jp_fraction": 0.01  },
+            { "amount": 500,    "min_lvl": 5,  "jp_fraction": 0.02  },
+            { "amount": 1000,   "min_lvl": 10, "jp_fraction": 0.04  },
+            { "amount": 2500,   "min_lvl": 15, "jp_fraction": 0.1   },
+            { "amount": 12500,  "min_lvl": 20, "jp_fraction": 0.5   },
+            { "amount": 25000,  "min_lvl": 25, "jp_fraction": 1     }
+        ]
+    }
+}

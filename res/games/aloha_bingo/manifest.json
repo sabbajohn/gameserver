@@ -1,0 +1,130 @@
+{
+    "name": "aloha_bingo",
+    "version": 1,
+    "engine": "bingo",
+    "profiles": ["default"],
+    "tech": "godot-html5",
+    "extra": {
+        "export_name": "index",
+        "jackpot_links": [
+            {
+                "name": "aloha_bingo",
+                "fraction": 0.005
+            },
+            {
+                "name": "lobby",
+                "fraction": 0.005
+            }
+        ]
+    },
+    "gamedefs":{
+        "extraction_normal": 30,
+        "extraction_extra": 11,
+        "cards": 4,
+        "card_lines": 3,
+        "card_columns": 5,
+        "prizes": {
+            "lin": {
+                    "pays": 3,
+                    "patterns": [ [1,1,1,1,1, 0,0,0,0,0, 0,0,0,0,0],
+                                    [0,0,0,0,0, 1,1,1,1,1, 0,0,0,0,0],
+                                    [0,0,0,0,0, 0,0,0,0,0, 1,1,1,1,1] ],
+                    "pifa": false,
+                    "bonus": false
+                },
+            "a": {
+                    "pays": 3,
+                    "patterns": [ [0,0,1,0,0, 0,1,0,1,0, 1,0,0,0,1] ],
+                    "pifa": false,
+                    "bonus": false
+                },
+            "v": {
+                    "pays": 3,
+                    "patterns": [ [1,0,0,0,1, 0,1,0,1,0, 0,0,1,0,0] ],
+                    "pifa": false,
+                    "bonus": false
+                },
+            "cross": {
+                    "pays": 8,
+                    "patterns": [ [0,0,1,0,0, 1,1,1,1,1, 0,0,1,0,0] ],
+                    "pifa": true,
+                    "bonus": false
+                },
+            "tri": {
+                    "pays": 10,
+                    "patterns": [ [0,0,1,0,0, 0,1,0,1,0, 1,1,1,1,1] ],
+                    "pifa": true,
+                    "bonus": false
+                },
+            "invtri": {
+                    "pays": 10,
+                    "patterns": [ [1,1,1,1,1, 0,1,0,1,0, 0,0,1,0,0] ],
+                    "pifa": true,
+                    "bonus": false
+                },
+            "checker": {
+                    "pays": 40,
+                    "patterns": [ [1,0,1,0,1, 0,1,0,1,0, 1,0,1,0,1] ],
+                    "pifa": true,
+                    "bonus": false
+                },
+            "square": {
+                    "pays": 40,
+                    "patterns": [ [0,1,1,1,0, 0,1,0,1,0, 0,1,1,1,0] ],
+                    "pifa": true,
+                    "bonus": false
+                },
+            "m": {
+                    "pays": 100,
+                    "patterns": [ [1,0,0,0,1, 1,1,0,1,1, 1,0,1,0,1] ],
+                    "pifa": true,
+                    "bonus": false,
+                    "sbb_blk": true
+                },
+            "w": {
+                    "pays": 100,
+                    "patterns": [ [1,0,1,0,1, 1,1,0,1,1, 1,0,0,0,1] ],
+                    "pifa": true,
+                    "bonus": false,
+                    "sbb_blk": true
+                },
+            "dblin": {
+                    "pays": 100,
+                    "patterns": [ [0,0,0,0,0, 1,1,1,1,1, 1,1,1,1,1],
+                                    [1,1,1,1,1, 0,0,0,0,0, 1,1,1,1,1],
+                                    [1,1,1,1,1, 1,1,1,1,1, 0,0,0,0,0] ],
+                    "pifa": true,
+                    "bonus": false,
+                    "sbb_blk": true
+                },
+            "mw": {
+                    "pays": 200,
+                    "patterns": [ [1,0,1,0,1, 1,1,0,1,1, 1,0,1,0,1] ],
+                    "pifa": true,
+                    "bonus": false,
+                    "sbb_blk": true
+                },
+            "jail": {
+                    "pays": 500,
+                    "patterns": [ [1,1,1,1,1, 0,1,0,1,0, 1,1,1,1,1] ],
+                    "pifa": true,
+                    "bonus": false,
+                    "sbb_blk": true
+                },
+            "perimeter": {
+                    "pays": 750,
+                    "patterns": [ [1,1,1,1,1, 1,0,0,0,1, 1,1,1,1,1] ],
+                    "pifa": true,
+                    "bonus": true,
+                    "sbb_blk": true
+                },
+            "bingo": {
+                    "pays": 1500,
+                    "patterns": [ [1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1] ],
+                    "pifa": true,
+                    "bonus": false,
+                    "sbb_blk": true
+                }
+            }
+        }
+}

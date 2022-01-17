@@ -1,0 +1,71 @@
+['/home/darcio/godot/amazonia/amz-gameserver/webingo/engines/bingo_math/tester.py', 'bigbingo', '100000', '11', '50']
+
+
+PERFORMING MATH TEST
+100000 plays, buying up to 11 extras
+betting 50 each on 4 cards
+jackpot fraction is at 0.2%
+
+
+TEST INFO
+Math:           bigbingo
+Math cfg:       {}
+Total plays:    100000
+Cards bet on:   4
+Bet per card:   50
+Allowed extras: 11
+Initial Jackpot:  100,000,000.00
+Final Jackpot:    100,350,463.06
+Max Jackpot:      100,350,463.06
+
+
+TEST ACCUMULATORS
+Accumulator           Value        Info
+--------------------  -----------  -------------------------------------------
+plays_total           100,000      -
+plays_with_extra       40,172       40.17%
+plays_with_prize       54,365       54.36%
+plays_with_jackpot    4            every 25000.00 plays
+extra_balls_bought    441,892          4.419 per play and 11.000 per play w/extras
+total_spent           195,981,271  USD 1,959.81
+total_won             189,087,222     96.48%
+total_spent_naturals   20,000,000     10.21%
+total_won_naturals     19,503,472     97.52% with jackpots, 93.50% without
+total_spent_extras    175,981,271    398.245 (USD 0.00) per extra on avg.
+total_won_extras      169,583,750     96.36%
+total_won_jackpots        802,672      0.42% total, 4.12% of naturals
+
+
+PRIZE INFO
+Prize        Count  Count %    Wins         Plays     Wins %
+---------  -------  ---------  -----------  --------  --------
+JACKPOT          4   0.00%         802,672  25000.00   0.42%
+bingo          270   0.21%      20,250,000    370.37  10.71%
+perimeter      722   0.57%      27,075,000    138.50  14.32%
+jail           920   0.73%      23,000,000    108.70  12.16%
+mw            2864   2.27%      28,640,000     34.92  15.15%
+dblin         5861   4.66%      29,305,000     17.06  15.50%
+w             1384   1.10%       6,920,000     72.25   3.66%
+m             1381   1.10%       6,905,000     72.41   3.65%
+square        7198   5.72%      14,396,000     13.89   7.61%
+checker       4231   3.36%       8,462,000     23.64   4.48%
+invtri        6967   5.53%       3,483,500     14.35   1.84%
+tri           6877   5.46%       3,438,500     14.54   1.82%
+cross        13308  10.57%       5,323,200      7.51   2.82%
+v            14090  11.19%       2,113,500      7.10   1.12%
+a            14229  11.30%       2,134,350      7.03   1.13%
+lin          45590  36.21%       6,838,500      2.19   3.62%
+TOTALS      125896    100%     189,087,222       n/a    100%
+
+
+OTHER INFO
+Commit:     9b6f715
+Date:       2020-12-01 11:07:42.284975
+Time spent: 0:03:47.051508
+bigbingo extraction stats:{
+  "all_extractions": 100000,
+  "forced_jackpot_extractions": 4,
+  "normal_extractions": 99996,
+  "high_prize_extras_found": 25381,
+  "high_prize_extras_blocked": 5976
+}

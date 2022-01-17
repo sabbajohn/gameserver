@@ -1,0 +1,8 @@
+{
+    "_": "Used only by tester.py",
+    "fraction":  0.005,
+    "min_value": 100000000,
+    "max_value": 10000000000,
+    "storage_int_multiplier": 1000,
+    "denomination": "CRE"
+}

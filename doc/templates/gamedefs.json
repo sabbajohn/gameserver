@@ -1,0 +1,252 @@
+{
+    betcontrol: {
+        CRE: {
+            allowed_bets: [{
+                amount: 50,
+                jp_fraction: 0.002,
+                min_lvl: 0
+            }, {
+                amount: 100,
+                jp_fraction: 0.004,
+                min_lvl: 0
+            }, {
+                amount: 150,
+                jp_fraction: 0.006,
+                min_lvl: 0
+            }, {
+                amount: 250,
+                jp_fraction: 0.01,
+                min_lvl: 3
+            }, {
+                amount: 500,
+                jp_fraction: 0.02,
+                min_lvl: 5
+            }, {
+                amount: 1000,
+                jp_fraction: 0.04,
+                min_lvl: 10
+            }, {
+                amount: 2500,
+                jp_fraction: 0.1,
+                min_lvl: 15
+            }, {
+                amount: 12500,
+                jp_fraction: 0.5,
+                min_lvl: 20
+            }, {
+                amount: 25000,
+                jp_fraction: 1,
+                min_lvl: 25
+            }],
+            max_bet: 25000,
+            min_bet: 50
+        }
+    },
+    card_columns: 5,
+    card_lines: 3,
+    cards: 4,
+    extraction_extra: 11,
+    extraction_normal: 30,
+    prizes: {
+        a: {
+            bonus: False,
+            overrides: [...],
+            patterns: [
+                [0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1]
+            ],
+            pays: 3,
+            pifa: False
+        },
+        bingo: {
+            bonus: False,
+            overrides: [
+                [0, lin, 0],
+                [0, lin, 1],
+                [0, lin, 2],
+                [0, a, 0],
+                [0, v, 0],
+                [0, cross, 0],
+                [0, tri, 0],
+                [0, invtri, 0],
+                [0, checker, 0],
+                [0, square, 0],
+                [0, m, 0],
+                [0, w, 0],
+                [0, dblin, 0],
+                [0, dblin, 1],
+                [0, dblin, 2],
+                [0, mw, 0],
+                [0, jail, 0],
+                [0, perimeter, 0]
+            ],
+            patterns: [
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            ],
+            pays: 1500,
+            pifa: True
+        },
+        checker: {
+            bonus: False,
+            overrides: [
+                [0, a, 0],
+                [0, v, 0]
+            ],
+            patterns: [
+                [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+            ],
+            pays: 40,
+            pifa: True
+        },
+        cross: {
+            bonus: False,
+            overrides: [
+                [0, lin, 1]
+            ],
+            patterns: [
+                [0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0]
+            ],
+            pays: 8,
+            pifa: False
+        },
+        dblin: {
+            bonus: False,
+            overrides: [
+                [0, lin, 1],
+                [0, lin, 2],
+                [1, lin, 0],
+                [1, lin, 2],
+                [2, lin, 0],
+                [2, lin, 1]
+            ],
+            patterns: [
+                [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+            ],
+            pays: 100,
+            pifa: True
+        },
+        invtri: {
+            bonus: False,
+            overrides: [
+                [0, lin, 0],
+                [0, v, 0]
+            ],
+            patterns: [
+                [1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0]
+            ],
+            pays: 10,
+            pifa: True
+        },
+        jail: {
+            bonus: False,
+            overrides: [
+                [0, lin, 0],
+                [0, lin, 2],
+                [0, a, 0],
+                [0, v, 0],
+                [0, tri, 0],
+                [0, invtri, 0],
+                [0, checker, 0],
+                [0, square, 0],
+                [0, dblin, 1]
+            ],
+            patterns: [
+                [1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1]
+            ],
+            pays: 500,
+            pifa: True
+        },
+        lin: {
+            bonus: False,
+            overrides: [],
+            patterns: [
+                [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+            ],
+            pays: 3,
+            pifa: False
+        },
+        m: {
+            bonus: False,
+            overrides: [
+                [0, v, 0]
+            ],
+            patterns: [
+                [1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1]
+            ],
+            pays: 100,
+            pifa: True
+        },
+        mw: {
+            bonus: False,
+            overrides: [
+                [0, a, 0],
+                [0, v, 0],
+                [0, checker, 0],
+                [0, m, 0],
+                [0, w, 0]
+            ],
+            patterns: [
+                [1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1]
+            ],
+            pays: 200,
+            pifa: True
+        },
+        perimeter: {
+            bonus: True,
+            overrides: [
+                [0, lin, 0],
+                [0, lin, 2],
+                [0, dblin, 1]
+            ],
+            patterns: [
+                [1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+            ],
+            pays: 750,
+            pifa: True
+        },
+        square: {
+            bonus: False,
+            overrides: [...],
+            patterns: [
+                [0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0]
+            ],
+            pays: 40,
+            pifa: True
+        },
+        tri: {
+            bonus: False,
+            overrides: [
+                [0, lin, 2],
+                [0, a, 0]
+            ],
+            patterns: [
+                [0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1]
+            ],
+            pays: 10,
+            pifa: True
+        },
+        v: {
+            bonus: False,
+            overrides: [...],
+            patterns: [
+                [1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0]
+            ],
+            pays: 3,
+            pifa: False
+        },
+        w: {
+            bonus: False,
+            overrides: [
+                [0, a, 0]
+            ],
+            patterns: [
+                [1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1]
+            ],
+            pays: 100,
+            pifa: True
+        }
+    }
+}

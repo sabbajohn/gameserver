@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='' xml:lang=''>
+<head>
+	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, user-scalable=no' />
+	<link id='-gd-engine-icon' rel='icon' type='image/png' href='favicon.png' />
+	<title> {{ locals().get('THE_TITLE', "Amazonia Gaming") }} </title>
+
+	<script>
+        window.top_bar_h = 0;
+        window.pck_server_location = "static/games-available/"; // PCK_SERVER_LOCATION
+        // console.log(window.pck_server_location);
+    </script>
+	<link rel=stylesheet href={{ static_url('fb_portal_2/style_fb_web_templates.css') }} />
+
+
+</head>
+<body>
+
+		<!-- BEGIN BODY HEAD -->
+		<script type="text/javascript" src="{{static_url('fb_portal_2/fb_async_init.js')}}" ></script>
+		<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+		<!--END BODY HEAD-->
+	<div id='canvas-container'>
+	<canvas id='canvas' allowfullscreen>
+		HTML5 canvas appears to be unsupported in the current browser.<br />
+		Please try updating or use a different browser.
+	</canvas>
+	<div id='status'>
+		<div id="screen-for-mobile"></div>
+		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
+		<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div id='status-notice' class='godot' style='display: none;'></div>
+	</div>
+</div>
+
+	<script type='text/javascript' src="{{static_url('webingo-client/webingo-client.js')}}"></script>
+	<script type='text/javascript'>//<![CDATA[
+		{% include "include/godot_loader_web_new.js" %}
+	//]]></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='' xml:lang=''>
+<head>
+	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, user-scalable=no' />
+	<link id='-gd-engine-icon' rel='icon' type='image/png' href='favicon.png' />
+	<title> {{ locals().get('THE_TITLE', "Amazonia Gaming") }} </title>
+
+	<script>
+        window.top_bar_h = 0;
+        window.pck_server_location = "static/games-available/"; // PCK_SERVER_LOCATION
+        // console.log(window.pck_server_location);
+    </script>	
+	<link rel=stylesheet href="/static/fb_portal_2/style_fb_web2.css?v=20"/>
+
+</head>
+<body>
+
+		<!-- BEGIN BODY HEAD -->
+		<script type="text/javascript" src="/static/fb_portal_2/fb_async_init.js?v=21" ></script>
+		<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+		<!--END BODY HEAD-->
+	<div id='canvas-container'>
+	<canvas id='canvas' allowfullscreen>
+		HTML5 canvas appears to be unsupported in the current browser.<br />
+		Please try updating or use a different browser.
+	</canvas>
+	<div id='status'>
+		<div id="screen-for-mobile"></div>
+		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
+		<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div id='status-notice' class='godot' style='display: none;'></div>
+	</div>
+</div>
+
+	<script type='text/javascript' src="/static/webingo-client/webingo-client.js?v=19"></script>
+	<script type='text/javascript'>//<![CDATA[
+		const BASE_PATH = '{{BASE_PATH}}';
+		const EXECUTABLE_NAME = '{{EXECUTABLE_NAME}}';
+		const MAIN_PACK = '{{MAIN_PACK}}';
+
+		// console.log("BASE_PATH " + BASE_PATH)
+		// console.log("EXECUTABLE_NAME " + EXECUTABLE_NAME)
+		// console.log("MAIN_PACK " + MAIN_PACK)
+
+		const GODOT_CONFIG = {
+			"args": [],
+			"canvasResizePolicy": 2,
+			"executable": "/static/webingo-client/webingo-client",
+			"experimentalVK": false,
+			"fileSizes": {
+				"/static/webingo-client/webingo-client.pck": 22397840,   // TODO: THIS SHOULD NOT BE FIXED
+				"/static/webingo-client/webingo-client.wasm": 12665632   // TODO: THIS SHOULD NOT BE FIXED
+			},
+			"gdnativeLibs": []
+		};
+		var engine = new Engine(GODOT_CONFIG);
+		(function() {
+			const INDETERMINATE_STATUS_STEP_MS = 100;
+			var statusProgress = document.getElementById('status-progress');
+			var statusProgressInner = document.getElementById('status-progress-inner');
+			var statusIndeterminate = document.getElementById('status-indeterminate');
+			var statusNotice = document.getElementById('status-notice');
+			var initializing = true;
+			var statusMode = 'hidden';
+			var animationCallbacks = [];
+			function animate(time) {
+				animationCallbacks.forEach(callback => callback(time));
+				requestAnimationFrame(animate);
+			}
+			requestAnimationFrame(animate);
+			function setStatusMode(mode) {
+				if (statusMode === mode || !initializing)
+					return;
+				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
+					elem.style.display = 'none';
+				});
+				animationCallbacks = animationCallbacks.filter(function(value) {
+					return (value != animateStatusIndeterminate);
+				});
+				switch (mode) {
+					case 'progress':
+						statusProgress.style.display = 'block';
+						break;
+					case 'indeterminate':
+						statusIndeterminate.style.display = 'block';
+						animationCallbacks.push(animateStatusIndeterminate);
+						break;
+					case 'notice':
+						statusNotice.style.display = 'block';
+						break;
+					case 'hidden':
+						break;
+					default:
+						throw new Error('Invalid status mode');
+				}
+				statusMode = mode;
+			}
+			window.on_engine_ready = function on_engine_ready()
+			{
+				console.log("Engine is ready now");
+				setStatusMode( 'hidden' );
+				document.getElementById('status' ).style.display = 'none';
+			}	
+			function animateStatusIndeterminate(ms) {
+				var i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
+				if (statusIndeterminate.children[i].style.borderTopColor == '') {
+					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
+						child.style.borderTopColor = '';
+					});
+					statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
+				}
+			}
+			function setStatusNotice(text) {
+				while (statusNotice.lastChild) {
+					statusNotice.removeChild(statusNotice.lastChild);
+				}
+				var lines = text.split('\n');
+				lines.forEach((line) => {
+					statusNotice.appendChild(document.createTextNode(line));
+					statusNotice.appendChild(document.createElement('br'));
+				});
+			};
+			function displayFailureNotice(err) {
+				var msg = err.message || err;
+				console.error(msg);
+				setStatusNotice(msg);
+				setStatusMode('notice');
+				initializing = false;
+			};
+			if (!Engine.isWebGLAvailable()) {
+				displayFailureNotice('WebGL not available');
+			} else {
+				setStatusMode('indeterminate');
+				engine.startGame({
+					'onProgress': function (current, total) {
+						if (total > 0) {
+							statusProgressInner.style.width = current/total * 100 + '%';
+							setStatusMode('progress');
+							if (current === total) {
+								// wait for progress bar animation
+								setTimeout(() => {
+									setStatusMode('indeterminate');
+								}, 500);
+							}
+						} else {
+							setStatusMode('indeterminate');
+						}
+					},
+				}).then(() => {
+					setStatusMode('hidden');
+					initializing = false;
+				}, displayFailureNotice);
+			}
+		})();
+	//]]></script>
+</body>
+</html>
+

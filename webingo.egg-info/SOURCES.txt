@@ -1,0 +1,10 @@
+README.md
+setup.py
+webingo/__init__.py
+webingo/__main__.py
+webingo.egg-info/PKG-INFO
+webingo.egg-info/SOURCES.txt
+webingo.egg-info/dependency_links.txt
+webingo.egg-info/not-zip-safe
+webingo.egg-info/requires.txt
+webingo.egg-info/top_level.txt

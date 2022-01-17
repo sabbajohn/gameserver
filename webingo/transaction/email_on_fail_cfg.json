@@ -1,0 +1,5 @@
+{
+    "subject":"Fail to post round @",
+    "contents":"<html><head>Warning!</head><body><h1>We had some trouble to Post this round, code: @code</h1>@round</body></html>",
+    "dev_team":["john@amzdig.com", "descorza17@gmail.com", "darcio@studiobluechip.com"]
+}

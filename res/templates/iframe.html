@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='' xml:lang=''>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazonia Gaming</title>
+
+	<link rel=stylesheet href="{{ static_url('fb_portal_2/iframe.css') }}" />
+
+</head> 
+<body>
+    <!-- User will open our other page in this iframe-->
+    <iframe id="iframe_id" src="/static/fb_portal_2/fb_web.html?f=true" allowfullscreen=true></iframe>
+    <br>
+        	<!-- BEGIN LINKS -->
+            <div id="amz-bottom">
+                <div class="bottom-menu">
+                    <ul>
+                        <li><a target="_blank" href="https://www.facebook.com/amazoniabingo/">Fan Page <span class="spacer">|</span></a></li>
+                        <li><a target="_blank" href="http://amazoniabingo.com/terms-of-service.html">Termos de Serviço <span class="spacer">|</span></a></li>
+                        <li><a target="_blank" href="http://amazoniabingo.com/terms-of-privacy-policy.html">Política de Privacidade <span class="spacer">|</span></a></li>
+                        <li><a target="_blank" href="http://amazoniabingo.com/index.html#faq">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="chips" class="chips">
+                <div class="left"></div>
+                <div class="right"></div>
+                <script type='text/javascript'>
+                    window.onscroll = function () {
+                        var currentScrollPos = window.pageYOffset;
+                        if (currentScrollPos < 200) {
+                            document.getElementById("chips").style.bottom = "-131px";
+                        } else {
+                            document.getElementById("chips").style.bottom = "0";
+                        }
+                    };
+                </script>
+            </div>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Famazoniabingo%2F&tabs=timeline&width=500&height=900&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=354159478852902" width="500" height="900" style="border:none;overflow:hidden;position:relative;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <div class="store-links">
+                <div class="title">Disponível para Android e em breve para iOS</div>
+                <div class="buttons">
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.amazoniagaming.lobby&fbclid=IwAR2Hh8rN-QSxpHG6tRnH2BwSO-6T4U7f32D2mMUdhSYH7tHSmUDnalzbcgU">
+                        <img width="150" height="45" src='{{ static_url("fb_portal_2/google.png") }}' title="Get it on Google Play">
+                    </a>
+                    <a target="_blank" href="#">
+                        <img width="150" height="45" src='{{ static_url("fb_portal_2/appstore.png")}}' title="Download on the App Store">
+                    </a>
+                </div>
+            <br>
+            <!-- <div class="title">Em breve para iOS</div>
+                <div class="buttons">
+                    <a target="_blank" href="#">
+                        <img width="150" height="45" src='{{ static_url("fb_portal_2/appstore.png")}}' title="Download on the App Store">
+                    </a>
+                </div>
+            </div> -->
+        <!-- END LINKS -->
+        <script>
+            {% include "include/resizing_iframe.js" %}
+        </script>
+</body>
+</html>

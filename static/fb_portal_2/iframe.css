@@ -1,0 +1,118 @@
+body {
+    touch-action: none;
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    text-align: center;
+    background: #000000 url("/static/fb_portal_2/fundo_portal_web.jpg") center top;
+    background-size: cover;
+    /* width:99vw */
+}
+
+
+#amz-bottom .bottom-menu {
+z-index: 100;
+margin-top: 40px;
+text-align: center;
+}
+
+#amz-bottom .bottom-menu ul {
+padding: 0;
+}
+
+#amz-bottom .bottom-menu li {
+display: inline;
+}
+
+#amz-bottom .bottom-menu a {
+text-decoration: none;
+display: inline-block;
+cursor: pointer;
+margin-right: 10px;
+color: #fff;
+font-size: .9em;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#amz-bottom .bottom-menu a span.spacer {
+padding-left: 10px;
+}
+
+.chips {
+position: fixed;
+bottom: -131px;
+transition: bottom 1s;
+width: 100%;
+height: 131px;
+z-index: 1;
+display: block;
+}
+
+.chips .left {
+position: absolute;
+left: 0;
+height: 131px;
+width: 307px;
+background: url("/static/fb_portal_2/chips2.png") no-repeat;
+background-size: cover;
+transform: scaleX(-1);
+}
+
+.chips .right {
+position: absolute;
+right: 0;
+background: url("/static/fb_portal_2/chips2.png") no-repeat;
+background-size: cover;
+bottom: 0;
+height: 131px;
+width: 307px;
+}
+
+.likebox {
+margin: 0;
+width: 500px;
+left: 0;
+right: 0;
+height: 900px;
+margin-top: 700px;
+}
+
+.store-links {
+padding-bottom: 40px;
+background-position: top;
+background-size: 50% 80%;
+z-index: 4;
+text-align: center;
+margin-bottom: 100px;
+margin-top: 100px;
+}
+
+.store-links .title{
+font-size: 18px;
+color: #fff;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.store-links .buttons {
+margin: 0 auto;
+margin-top: 20px;
+z-index: 5;
+}
+
+.store-links .buttons a {
+text-decoration: none;
+cursor: pointer;
+margin-right: 10px;
+}
+
+#iframe_id{
+margin-top:10px;
+margin-right: 10px;
+margin-left: 10px;
+margin-bottom: 10px;
+background:#000000;
+max-width:100%;
+width:100vw;
+border:none;
+}
